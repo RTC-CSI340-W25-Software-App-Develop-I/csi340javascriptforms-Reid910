@@ -8,23 +8,27 @@ const section = document.querySelector("section")
 //     message,
 // }
 function renderSubmit(submission) {
+    // const section = document.querySelector("section")
     const head = document.createElement("h2");
-    head.textContent = "Submitted!";
+    head.textContent = "Submission Confirmation";
     
     const name = document.createElement("p");
-    name.textContent = submission.name.value;
+    name.textContent = submission.name;
     
     const email = document.createElement("p");
-    email.textContent = submission.email.value;
+    email.textContent = submission.email;
     
     const phone = document.createElement("p");
-    phone.textContent = submission.phone.value;
+    phone.textContent = submission.phone;
     
     const reason = document.createElement("p");
-    reason.textContent = submission.reason.value;
+    reason.textContent = submission.reason;
     
     const message = document.createElement("p");
-    message.textContent = submission.message.value;
+    message.textContent = submission.message;
+    
+    section.appendChild(head);
+    section.appendChild(name);
     
     section.append(head,name,email,phone,reason,message); // add elements
 }
@@ -41,7 +45,7 @@ form.addEventListener("submit", (e) => {
             message: e.target.message.value,
         }
         
-        console.log(submission);
+        // console.log(submission);
         section.innerHTML = ""; // clear
         renderSubmit(submission);
     }
