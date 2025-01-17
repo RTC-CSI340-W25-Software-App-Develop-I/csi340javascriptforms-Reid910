@@ -27,9 +27,6 @@ function renderSubmit(submission) {
     const message = document.createElement("p");
     message.textContent = submission.message;
     
-    section.appendChild(head);
-    section.appendChild(name);
-    
     section.append(head,name,email,phone,reason,message); // add elements
 }
 
